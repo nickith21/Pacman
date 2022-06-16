@@ -1,3 +1,8 @@
+body{
+    width:100%;
+    min-height: 100%;
+}
+
 .box {
     position: absolute;
     background-color:black; 
@@ -10,7 +15,6 @@
     position: absolute;
     background-color:black; 
     height:20px;
-    width:300px;
-    left:100px;
+    width:100%;
     top:200px;
 }

@@ -26,8 +26,6 @@ function RunRight(velocity, direction) {
   const img = document.getElementById("PacMan");
   const imgWidth = img.width;
   const imgHeight = img.height;
-  console.log(img.height);
-  console.log(imgHeight);
   for (let i = 0; i < box.length; i++) {
     if (
       parseInt(getComputedStyle(box[i]).top.slice(0, -2)) +
@@ -57,15 +55,16 @@ function RunLeft(velocity, direction) {
   let imgWidth = img.width;
   let imgHeight = img.height;
   for (let i = 0; i < box.length; i++) {
+    let boxStyle = getComputedStyle(box[i]);
+    let boxSyleTop = boxStyle.top.slice(0, -2);
+    let boxStyleLeft = boxStyle.left.slice(0, -2);
+    let boxStyleHeight = boxStyle.height.slice(0, -2);
+    let boxStyleWidth = boxStyle.width.slice(0, -2);
     if (
-      parseInt(getComputedStyle(box[i]).top.slice(0, -2)) +
-        parseInt(getComputedStyle(box[i]).height.slice(0, -2)) >
-        y &&
-      parseInt(getComputedStyle(box[i]).top.slice(0, -2)) < y + imgHeight &&
-      parseInt(getComputedStyle(box[i]).left.slice(0, -2)) < x &&
-      parseInt(getComputedStyle(box[i]).left.slice(0, -2)) +
-        parseInt(getComputedStyle(box[i]).width.slice(0, -2)) >
-        x
+      parseInt(boxSyleTop) + parseInt(boxStyleHeight) > y &&
+      parseInt(boxSyleTop) < y + imgHeight &&
+      parseInt(boxStyleLeft) < x &&
+      parseInt(boxStyleLeft) + parseInt(boxStyleWidth) > x
     )
       return;
     if (0 > x) {
