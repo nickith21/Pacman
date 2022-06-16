@@ -1,86 +1,11 @@
 <html>
-<SCRIPT>
-    var x = 0;
-    var y = 0;
-    
-    //establishing the direction the PacMan is facing
-    const right = 0;
-    const left = 1;
-    const up = 2;
-    const down = 3;
-
-    //an array of the different Pacman faces
-    const pacArray = [
-        ['PacManRightOpen.png', 'PacManRightClosed.png'],
-        ['PacManLeftOpen.png', 'PacManLeftClosed.png'],
-        ['PacManUpOpen.png', 'PacManUpClosed.png'],
-        ['PacManDownOpen.png', 'PacManDownClosed.png']
-    ];
-    
-    //determines whether the Pacman should have an open or closed mouth
-    var focus = 0;
-
-    function RunRight(velocity,direction) {
-        let img = document.getElementById("PacMan");
-        let imgWidth = img.width
-        if(window.innerWidth < (x + imgWidth)) return
-        focus = (focus + 1) % 2;
-        img.src = pacArray[direction][focus];
-        x += velocity;
-        img.style.left = x + 'px';
-    }
-
-    function RunLeft(velocity,direction) {
-        let img = document.getElementById("PacMan");
-        let imgWidth = img.width
-        if(0 > x) return
-        focus = (focus + 1) % 2;
-        img.src = pacArray[direction][focus];
-        x += velocity;
-        img.style.left = x + "px";
-    }
-
-    function RunUp(velocity,direction) {
-        let img = document.getElementById("PacMan");
-        let imgWidth = img.height
-        if(0 > y) return
-        focus = (focus + 1) % 2;
-        img.src = pacArray[direction][focus];
-        y += velocity;
-        img.style.top = y + "px";
-    }
-
-    function RunDown(velocity,direction) {
-        let img = document.getElementById("PacMan");
-        let imgHeight = img.height
-        if(window.innerHeight < (y + imgHeight)) return
-        focus = (focus + 1) % 2;
-        img.src = pacArray[direction][focus];
-        y += velocity;
-        img.style.top = y + "px";
-    }
-
-    function keyPress(e){
-        if(e.keyCode == '39'){
-            RunRight(20,right)
-        }
-        if(e.keyCode == '37'){
-            RunLeft(-20,left)
-        }
-        if(e.keyCode == '38'){
-            RunUp(-20,up)
-        }
-        if(e.keyCode == '40'){
-            RunDown(20,down)
-        }
-    }
-
-    addEventListener("keydown",keyPress)
-
-</SCRIPT>
-
-<body>
-    <img id="PacMan" src="PacManRightOpen.png" width='50' onclick="Run()" style="position:absolute"> </img>
-</body>
-
+    <head>
+        <script src="./main.js"></script>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        <img id="PacMan" src="PacManRightOpen.png" width='50' height='50' style="position:absolute"> </img>
+        <div class="box"></div>
+        <div class="box2"></div>
+    </body>
 </html>

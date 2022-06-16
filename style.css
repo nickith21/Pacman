@@ -1,0 +1,16 @@
+.box {
+    position: absolute;
+    background-color:black; 
+    height:20px;
+    width:300px;
+    left: 100px;
+    top:100px;
+}
+.box2 {
+    position: absolute;
+    background-color:black; 
+    height:20px;
+    width:300px;
+    left:100px;
+    top:200px;
+}
