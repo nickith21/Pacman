@@ -1,20 +1,61 @@
 body{
     width:100%;
     min-height: 100%;
+    background: lightblue;
+}
+
+img{
+    background: transparent;
 }
 
 .box {
     position: absolute;
-    background-color:black; 
+    background-color: gray; 
     height:20px;
     width:300px;
     left: 100px;
     top:100px;
 }
+
 .box2 {
     position: absolute;
-    background-color:black; 
+    background-color: gray; 
     height:20px;
-    width:100%;
+    width:100vw;
+    top:400px;
+}
+
+.box3 {
+    position: absolute;
+    background-color:gray; 
+    height:20px;
+    width:50vw;
+    left: 100px;
+    top:300px;
+}
+
+.box4 {
+    position: absolute;
+    background-color:gray; 
+    height:20px;
+    width:100px;
     top:200px;
+}
+
+.box5 {
+    position: absolute;
+    background-color:gray; 
+    height:20px;
+    width:300px;
+    top:200px;
+    left: 400px;
+}
+
+.box6 {
+    position: absolute;
+    background-color:gray; 
+    height:200px;
+    width:20px;
+    top:100px;
+    left: 100px;
 }
