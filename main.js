@@ -19,6 +19,9 @@ const pacArray = [
 //gets all of the div elements
 const box = document.getElementsByTagName("div");
 
+// const banana = document.getElementById("Fruit");
+// console.log(banana.width);
+
 //determines whether the Pacman should have an open or closed mouth
 var focus = 0;
 
@@ -26,6 +29,18 @@ function RunRight(velocity, direction) {
   const img = document.getElementById("PacMan");
   const imgWidth = img.width;
   const imgHeight = img.height;
+  const banana = document.getElementById("Fruit");
+  if (
+    parseInt(getComputedStyle(banana).top.slice(0, -2)) +
+      parseInt(getComputedStyle(banana).height.slice(0, -2)) >
+      y &&
+    parseInt(getComputedStyle(banana).top.slice(0, -2)) < y + imgHeight &&
+    parseInt(getComputedStyle(banana).left.slice(0, -2)) < x + imgWidth &&
+    parseInt(getComputedStyle(banana).left.slice(0, -2)) +
+      parseInt(getComputedStyle(banana).width.slice(0, -2)) >
+      x + imgWidth
+  )
+    alert("BDeegies is the way");
   for (let i = 0; i < box.length; i++) {
     if (
       parseInt(getComputedStyle(box[i]).top.slice(0, -2)) +
@@ -54,6 +69,19 @@ function RunLeft(velocity, direction) {
   const img = document.getElementById("PacMan");
   let imgWidth = img.width;
   let imgHeight = img.height;
+  const banana = document.getElementById("Fruit");
+  let bananaStyle = getComputedStyle(banana);
+  let bananaSyleTop = bananaStyle.top.slice(0, -2);
+  let bananaStyleLeft = bananaStyle.left.slice(0, -2);
+  let bananaStyleHeight = bananaStyle.height.slice(0, -2);
+  let bananaStyleWidth = bananaStyle.width.slice(0, -2);
+  if (
+    parseInt(bananaSyleTop) + parseInt(bananaStyleHeight) > y &&
+    parseInt(bananaSyleTop) < y + imgHeight &&
+    parseInt(bananaStyleLeft) < x &&
+    parseInt(bananaStyleLeft) + parseInt(bananaStyleWidth) > x
+  )
+    alert("BDeegies is the way");
   for (let i = 0; i < box.length; i++) {
     let boxStyle = getComputedStyle(box[i]);
     let boxSyleTop = boxStyle.top.slice(0, -2);
@@ -82,6 +110,18 @@ function RunUp(velocity, direction) {
   const img = document.getElementById("PacMan");
   let imgWidth = img.width;
   let imgHeight = img.height;
+  const banana = document.getElementById("Fruit");
+  if (
+    parseInt(getComputedStyle(banana).left.slice(0, -2)) +
+      parseInt(getComputedStyle(banana).width.slice(0, -2)) >
+      x &&
+    parseInt(getComputedStyle(banana).left.slice(0, -2)) < x + imgWidth &&
+    parseInt(getComputedStyle(banana).top.slice(0, -2)) < y &&
+    parseInt(getComputedStyle(banana).height.slice(0, -2)) +
+      parseInt(getComputedStyle(banana).top.slice(0, -2)) >
+      y
+  )
+    alert("BDeegies is the way");
   for (let i = 0; i < box.length; i++) {
     if (
       parseInt(getComputedStyle(box[i]).left.slice(0, -2)) +
@@ -106,6 +146,18 @@ function RunDown(velocity, direction) {
   const img = document.getElementById("PacMan");
   let imgWidth = img.width;
   let imgHeight = img.height;
+  const banana = document.getElementById("Fruit");
+  if (
+    parseInt(getComputedStyle(banana).left.slice(0, -2)) +
+      parseInt(getComputedStyle(banana).width.slice(0, -2)) >
+      x &&
+    parseInt(getComputedStyle(banana).left.slice(0, -2)) < x + imgWidth &&
+    parseInt(getComputedStyle(banana).top.slice(0, -2)) < y + imgHeight &&
+    parseInt(getComputedStyle(banana).height.slice(0, -2)) +
+      parseInt(getComputedStyle(banana).top.slice(0, -2)) >
+      y + imgHeight
+  )
+    alert("BDeegies is the way");
   for (let i = 0; i < box.length; i++) {
     if (
       parseInt(getComputedStyle(box[i]).left.slice(0, -2)) +
