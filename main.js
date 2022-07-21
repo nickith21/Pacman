@@ -27,6 +27,7 @@ var focus = 0;
 
 function RunRight(velocity, direction) {
   const img = document.getElementById("PacMan");
+  console.log(img);
   const imgWidth = img.width;
   const imgHeight = img.height;
   const banana = document.getElementById("Fruit");
